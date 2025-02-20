@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ検索</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #faq-list { margin-top: 20px; }
+        .faq-item { border-bottom: 1px solid #ccc; padding: 10px 0; }
+        .question { font-weight: bold; }
+    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet" >
+
+</head>
+<body>
+    <h1>FAQ検索</h1>
+    <input type="text" id="search-box" placeholder="検索キーワードを入力">
+    <button type="submit" class="btn btn-primary" onclick="searchFAQ()">検索</button>
+    <div id="faq-list"></div>
+
+    <script src="./kuromoji.js"></script>
+    <script src="faq_list.js"></script>
+    <script src="faq.js"></script>
+
+</body>
+</html>
