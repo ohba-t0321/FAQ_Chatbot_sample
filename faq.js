@@ -102,7 +102,8 @@ async function searchFAQ() {
 
     results.sort((a, b) => b.score - a.score); // スコア順にソート
     const resultText = results.slice(0, result_count).map(faq =>
-        `<div><strong>${marked.parse(faq.question)}</strong><p>${marked.parse(faq.answer).replace('\n','<br>')}</p></div>`
+        // `<div><strong>${faq.question}</strong><p>${marked.parse(faq.answer)}</p></div>`
+        `<div><strong>${faq.question}</strong><p>${faq.answer}</p></div>` // マークダウン形式にしても見やすくならなかったので平文で表示
     ).join('');
     resultArea.innerHTML = resultText;
 }

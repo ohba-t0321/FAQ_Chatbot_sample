@@ -9,7 +9,7 @@
         #faq-list { margin-top: 20px; }
         .faq-item { border-bottom: 1px solid #ccc; padding: 10px 0; }
         .question { font-weight: bold; }
-        h1 { background-color: darkblue; color: white; padding: 20px; }
+        h1 { background-color: darkcyan; color: #F0F0F0; padding: 20px; margin-bottom: 10px; }
     </style>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 </head>
 <body>
     <h1>退職給付会計 FAQ検索</h1>
-    <h4>退職給付会計に関する質問を入力してください。入力内容に近いQAを表示します。</h4>
+    <h5>退職給付会計に関する質問を入力してください。入力内容に近いQAを表示します。</h5>
     <textarea type="text" id="search-box" placeholder="検索キーワードを入力" style="width: 75%; min-height: 30px; resize: none; overflow-y: hidden;"></textarea><br>
     <label for="result-count">検索件数:</label>
     <input type="number" id="result-count" min="1" max="10" value="3" />
@@ -29,7 +29,10 @@
     <script src="kuromoji.js"></script>
     <script src="faq_list.js"></script>
     <script src="faq.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
+    マークダウン形式にするスクリプトだが、あまり見た目が改善しなかったので削除 
+    -->
 
 </body>
 </html>
