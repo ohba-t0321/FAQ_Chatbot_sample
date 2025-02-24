@@ -82,9 +82,12 @@ async function computeTFIDF(corpus) {
 async function searchFAQ() {
     const query = document.getElementById("search-box").value.toLowerCase();
     const resultArea = document.getElementById("faq-list");
+    const result_count = document.getElementById("result-count").value;
+    if (!query) {
+        resultArea.innerHTML = "検索内容を入力してください";
+        return;
+    }
     resultArea.innerHTML = "検索中...";
-
-    if (!query) return;
 
     let queryWords = await tokenizeJapaneseAsync(query);
     // let tfidfVectors = await computeTFIDF(faqData);
@@ -98,7 +101,8 @@ async function searchFAQ() {
     });
 
     results.sort((a, b) => b.score - a.score); // スコア順にソート
-    resultArea.innerHTML = results.slice(0, 3).map(faq =>
-        `<div><strong>${faq.question}</strong><p>${faq.answer}</p></div>`
+    const resultText = results.slice(0, result_count).map(faq =>
+        `<div><strong>${marked.parse(faq.question)}</strong><p>${marked.parse(faq.answer).replace('\n','<br>')}</p></div>`
     ).join('');
+    resultArea.innerHTML = resultText;
 }

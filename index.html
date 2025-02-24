@@ -9,6 +9,7 @@
         #faq-list { margin-top: 20px; }
         .faq-item { border-bottom: 1px solid #ccc; padding: 10px 0; }
         .question { font-weight: bold; }
+        h1 { background-color: darkblue; color: white; padding: 20px; }
     </style>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -16,14 +17,19 @@
 
 </head>
 <body>
-    <h1>FAQ検索</h1>
-    <input type="text" id="search-box" placeholder="検索キーワードを入力">
+    <h1>退職給付会計 FAQ検索</h1>
+    <h4>退職給付会計に関する質問を入力してください。入力内容に近いQAを表示します。</h4>
+    <textarea type="text" id="search-box" placeholder="検索キーワードを入力" style="width: 75%; min-height: 30px; resize: none; overflow-y: hidden;"></textarea><br>
+    <label for="result-count">検索件数:</label>
+    <input type="number" id="result-count" min="1" max="10" value="3" />
     <button type="submit" class="btn btn-primary" onclick="searchFAQ()">検索</button>
     <div id="faq-list"></div>
 
-    <script src="./kuromoji.js"></script>
+    <script src="script.js"></script>
+    <script src="kuromoji.js"></script>
     <script src="faq_list.js"></script>
     <script src="faq.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 </body>
 </html>
